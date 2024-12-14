@@ -4,7 +4,7 @@ class GeneratePointsJob extends AbstractJob
 {
     public function handle()
     {
-        $f = 1 / 0; //симулюємо помилку
+        //$f = 1 / 0; //симулюємо помилку
         parent::handle();
     }
 }
