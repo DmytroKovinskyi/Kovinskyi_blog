@@ -21,6 +21,10 @@ Route::resource('rest', RestTestController::class)->names('restTest');
 Route::group([ 'namespace' => 'App\Http\Controllers\Blog', 'prefix' => 'blog'], function () {
     Route::resource('posts', PostController::class)->names('blog.posts');
     Route::group(['prefix' => 'digging_deeper'], function () {
+        Route::get('process-video', 'DiggingDeeperController@processVideo')
+            ->name('digging_deeper.processVideo');
+        Route::get('prepare-catalog', 'DiggingDeeperController@prepareCatalog')
+            ->name('digging_deeper.prepareCatalog');
         Route::get('collections', [DiggingDeeperController::class, 'collections'])
             ->name('digging_deeper.collections');
 
